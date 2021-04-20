@@ -1,0 +1,3 @@
+[submodule "deps/cdk8s"]
+	path = deps/cdk8s
+	url = https://github.com/cdk8s-team/cdk8s.git

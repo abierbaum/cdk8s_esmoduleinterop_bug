@@ -1,12 +1,16 @@
 import { Construct } from 'constructs';
 import { App, Chart, ChartProps } from 'cdk8s';
+import * as kplus from 'cdk8s-plus-17';
+
 
 export class MyChart extends Chart {
+   cfgMap: kplus.ConfigMap;
+
   constructor(scope: Construct, id: string, props: ChartProps = { }) {
     super(scope, id, props);
 
-    // define resources here
-
+    this.cfgMap = new kplus.ConfigMap(this, 'cfg');
+    this.cfgMap.addData('test_data', 'data_value');
   }
 }
 
